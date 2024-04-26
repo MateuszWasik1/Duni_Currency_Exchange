@@ -1,0 +1,18 @@
+<form [formGroup]="form">
+    <input type="number" placeholder="Amount" formControlName="Amount"/>
+    <input type="text" placeholder="From" formControlName="From"/>
+    <input type="text" placeholder="To" formControlName="To"/>
+</form>
+
+<mat-form-field>
+    <mat-select>
+        <mat-option *ngFor="let currency of ListOfCurrencies;" [value]="currency['CurrencyID']">
+            {{currency['CurrencyName']}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>  
+
+
+<div *ngIf="ExchangeText">
+    {{ExchangeText}} as
+</div>
