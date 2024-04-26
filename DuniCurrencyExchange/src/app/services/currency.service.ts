@@ -12,19 +12,42 @@ export class CurrencyService {
                 "CurrencyID": 1,
                 "CurrencyName": "EUR",
                 "Rates": {
-                    "PLN": 0.69,
-                    "GBP": 1.1,
+                    "PLN": 0.2314,
                 }
             },
             {
                 "CurrencyID": 2,
                 "CurrencyName": "GBP",
                 "Rates": {
-                    "PLN": 1.69,
-                    "EUR": 2.1,
+                    "PLN": 0.1982,
                 }
             },
-        ];
+            {
+              "CurrencyID": 3,
+              "CurrencyName": "CHF",
+              "Rates": {
+                  "PLN": 0.2263,
+              }
+            },
+            {
+              "CurrencyID": 4,
+              "CurrencyName": "USD",
+              "Rates": {
+                  "PLN": 0.2481,
+              }
+            },
+            {
+              "CurrencyID": 5,
+              "CurrencyName": "PLN",
+              "Rates": {
+                  "EUR": 4.32,
+                  "GBP": 5.05,
+                  "CHF": 4.42, 
+                  "USD": 4.04,
+                  "PLN": 1,
+              }
+            },
+          ];
 
         return ListOfCurrencies;
     }
