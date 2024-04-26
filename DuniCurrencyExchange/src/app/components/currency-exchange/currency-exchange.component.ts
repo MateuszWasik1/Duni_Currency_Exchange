@@ -44,7 +44,7 @@ export class CurrencyExchangeComponent implements OnInit {
     this.SelectedToCurrency = currency.value;
     this.ConvertCurrencies();
   }
-
+ 
   public ConvertCurrencies = () => {
     if(this.SelectedFromCurrency != undefined && this.SelectedToCurrency != undefined){
       this.ShowResult = true;
