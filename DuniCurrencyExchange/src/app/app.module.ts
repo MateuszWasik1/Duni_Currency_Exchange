@@ -9,11 +9,13 @@ import { CurrencyExchangeComponent } from './components/currency-exchange/curren
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatSelectModule } from '@angular/material/select';
+import { CurrenciesComponent } from './components/currencies/currencies.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CurrencyExchangeComponent,
+    CurrenciesComponent,
   ],
   imports: [
     BrowserModule,

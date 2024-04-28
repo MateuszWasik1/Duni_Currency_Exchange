@@ -1,0 +1,32 @@
+<header>
+    <p>Currencies</p>
+</header>
+
+<div class="currencies-list hide-mobile">
+    <div class="list-header row">
+        <div class="col-1">Currency ID</div>
+        <div class="col-3">Currency Name</div>
+        <div class="col-8">Currency Rates</div>
+    </div>
+    <div *ngFor="let currency of CurrencyData;" class="row data-row">
+        <div class="col-1">{{currency.CurrencyID}}</div>
+        <div class="col-3">{{currency.CurrencyName}}</div>
+        <div class="col-8">
+            <span *ngFor="let rate of currency.Rates | keyvalue;">
+                {{rate.key}}: {{rate.value}} &nbsp;
+            </span>
+        </div>
+    </div> 
+</div>
+
+<div class="currencies-list show-mobile">
+    <div *ngFor="let currency of CurrencyData;" class="row data-row">
+        <div class="col-12">Currency ID: &nbsp; {{currency.CurrencyID}}</div>
+        <div class="col-12">Currency Name: &nbsp; {{currency.CurrencyName}}</div>
+        <div class="col-12">Currency Rates: &nbsp;
+            <span *ngFor="let rate of currency.Rates | keyvalue;">
+                {{rate.key}}: {{rate.value}} &nbsp;
+            </span>
+        </div>
+    </div>
+</div>

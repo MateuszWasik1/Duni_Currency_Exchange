@@ -1,0 +1,49 @@
+.currencies-list{
+    width: 90%;
+    margin: auto;
+
+    .list-header{
+        div{
+            font-size: 1.2em;
+        }
+    }
+
+    .row{
+        margin-right: 15px;
+        margin-left: 15px; 
+        text-align: center;
+    }
+
+    .data-row{
+        display: block;
+        padding: 5px;
+        background-color: #eee;
+        border-radius: 5px;
+        margin-top: 5px;
+    }
+}
+
+
+@media screen and (min-width: 769px){
+    .hide-mobile{
+        display: block;
+    }
+
+    .show-mobile{
+        display: none;
+    } 
+}
+
+@media screen and (max-width: 768px){
+    .hide-mobile{
+        display: none;
+    }
+
+    .show-mobile{
+        display: block;
+        
+        .row{
+            text-align: left;
+        }
+    } 
+}
