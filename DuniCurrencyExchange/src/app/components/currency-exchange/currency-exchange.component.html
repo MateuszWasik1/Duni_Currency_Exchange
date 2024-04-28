@@ -1,0 +1,70 @@
+<header>
+    <p>Currency Exchange</p>
+</header>
+
+<form [formGroup]="form">
+    <div>
+        <div class="form-group">
+            <span>
+                Amount
+            </span>
+            <input class="form-field" type="number" formControlName="Amount" min="0">
+        </div>
+
+        <div class="error-row" *ngIf="form.get('Amount')?.errors?.['requiresDigit']">
+            Form field accept only numbers!        
+        </div>
+
+        <div class="error-row" *ngIf="form.get('Amount')?.errors?.['min']">
+            Form field must be completed with a positive number!      
+        </div>
+    </div>
+    
+    <div>
+        <div class="form-group">
+            <span>
+                From
+            </span>
+            <mat-form-field>
+                <mat-select (selectionChange)="FromCurrencyChange($event)">
+                    <mat-option *ngFor="let currency of CurrencyData;" [value]="currency">
+                        {{currency['CurrencyName']}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>  
+        </div>
+    </div>
+
+    <div>
+        <div class="form-group">
+            <span>
+                To
+            </span>
+            <mat-form-field>
+                <mat-select (selectionChange)="ToCurrencyChange($event)">
+                    <mat-option *ngFor="let currency of CurrencyData;" [value]="currency">
+                        {{currency['CurrencyName']}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>  
+        </div>
+    </div>
+</form>
+
+<div class="error-row" *ngIf="IsError">
+    PLN value cannot be higher than 10.000!      
+</div>
+
+<div *ngIf="ShowResult && !IsError" class="result">
+    <span>
+        {{SelectedAmount}} {{SelectedFromCurrency?.CurrencyName}} = {{ExchangeResult | number: '1.0-4'}} {{SelectedToCurrency?.CurrencyName}}
+    </span>
+
+    <span class="additional-result" *ngIf="SelectedAmount > 1">
+        1 {{SelectedFromCurrency?.CurrencyName}} = {{ExchangeRate | number: '1.0-4'}} {{SelectedToCurrency?.CurrencyName}}
+    </span>
+
+    <span class="additional-result" *ngIf="SelectedAmount > 1">
+        1 {{SelectedToCurrency?.CurrencyName}} = {{ExchangeReversedResult | number: '1.0-4'}} {{SelectedFromCurrency?.CurrencyName}}
+    </span>
+</div> 
