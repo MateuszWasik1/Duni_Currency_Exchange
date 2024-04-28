@@ -15,6 +15,9 @@ export class CurrencyExchangeComponent implements OnInit {
   public ShowResult: boolean = false;
   public IsError: boolean = false;
 
+  public IsSelectedFromCurrencyPLN: boolean = false;
+  public IsSelectedToCurrencyPLN: boolean = false;
+
   public SelectedAmount: any = 0;
   public SelectedFromCurrency: any = undefined;
   public SelectedToCurrency: any = undefined;
@@ -45,12 +48,18 @@ export class CurrencyExchangeComponent implements OnInit {
 
   public FromCurrencyChange = (currency: any) => {
     this.SelectedFromCurrency = currency.value;
+
+    this.IsSelectedFromCurrencyPLN = this.SelectedFromCurrency.CurrencyName == "PLN";
+
     this.ConvertCurrencies();
 
   }
 
   public ToCurrencyChange = (currency: any) => {
     this.SelectedToCurrency = currency.value;
+
+    this.IsSelectedToCurrencyPLN = this.SelectedToCurrency.CurrencyName == "PLN";
+
     this.ConvertCurrencies();
   }
  
@@ -62,7 +71,7 @@ export class CurrencyExchangeComponent implements OnInit {
       this.ExchangeReversedResult = this.SelectedFromCurrency.Rates[this.SelectedToCurrency.CurrencyName];
       this.ExchangeRate = this.SelectedToCurrency.Rates[this.SelectedFromCurrency.CurrencyName];
 
-      this.IsError = this.SelectedFromCurrency?.CurrencyName == 'PLN' && this.SelectedAmount > 10000
+      this.IsError = this.SelectedFromCurrency?.CurrencyName == 'PLN' && this.SelectedAmount > 10000;
     }
   }
 } 

@@ -27,7 +27,7 @@
             </span>
             <mat-form-field>
                 <mat-select (selectionChange)="FromCurrencyChange($event)">
-                    <mat-option *ngFor="let currency of CurrencyData;" [value]="currency">
+                    <mat-option *ngFor="let currency of CurrencyData;" [value]="currency" [disabled]="!IsSelectedToCurrencyPLN && currency['CurrencyName'] != 'PLN'">
                         {{currency['CurrencyName']}}
                     </mat-option>
                 </mat-select>
@@ -42,7 +42,7 @@
             </span>
             <mat-form-field>
                 <mat-select (selectionChange)="ToCurrencyChange($event)">
-                    <mat-option *ngFor="let currency of CurrencyData;" [value]="currency">
+                    <mat-option *ngFor="let currency of CurrencyData;" [value]="currency" [disabled]="!IsSelectedFromCurrencyPLN && currency['CurrencyName'] != 'PLN'">
                         {{currency['CurrencyName']}}
                     </mat-option>
                 </mat-select>
