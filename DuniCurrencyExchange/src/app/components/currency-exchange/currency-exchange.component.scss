@@ -137,3 +137,33 @@ form{
 ::ng-deep .mat-focused{
     display: none;
 }
+
+@media screen and (max-width: 1300px){
+    .form-group {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 1100px){
+    .form-group {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .form-group {
+        width: 275px;
+        margin-left: 15px
+    }
+}
+
+@media screen and (max-width: 880px){
+    form{
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .form-group {
+        margin-top: 15px
+    }
+}
