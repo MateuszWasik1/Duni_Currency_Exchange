@@ -18,3 +18,18 @@ $theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+header{
+  p{
+    padding: 15px;
+    font-size: 2em;
+    text-transform: uppercase;
+  }
+}
+
+.error-row{
+  margin-top: 15px;
+  color:red;
+  font-size: 1.1em;
+  text-align: center;
+}

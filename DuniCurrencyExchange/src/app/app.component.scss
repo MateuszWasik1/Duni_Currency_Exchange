@@ -1,0 +1,16 @@
+.container{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 25px;
+    min-height: 80vh;
+    border: 1px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding-bottom: 15px;
+    max-width: 100%;
+}
+
+@media (min-width: 992px) {
+    .container{
+        max-width: 90%;
+    }
+}

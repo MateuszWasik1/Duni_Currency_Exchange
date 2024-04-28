@@ -1,3 +1,9 @@
+form{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
 .form-field {
     display: block;
     width: 100%;
@@ -72,6 +78,26 @@
     }
 }
 
+.result{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    height: 50px;
+    margin: 30px auto 15px auto;
+    border: 1px solid #CDD9ED;
+    border-radius: 10px;
+
+    span{
+        color: #99A3BA;
+        font-size: 1.5em;
+    }
+
+    .additional-result{
+        font-size: 1.3em;
+    }
+}
+
 .mat-form-field{
     width: 300px;
     border-radius: 0 6px 6px 0 ;
@@ -93,10 +119,21 @@
 }
 
 ::ng-deep .mat-select-arrow-wrapper{
-    padding: 0 10px 7px 0;
+    padding: 0 10px 0px 0;
 }
 
 ::ng-deep .mat-select-value-text{
     padding: 0 10px;
+}
 
+::ng-deep .mat-form-field-infix {
+    padding: 0.15em 0 !important;
+}
+
+::ng-deep .mat-select-value-text {
+    color: #99A3BA;
+}
+
+::ng-deep .mat-focused{
+    display: none;
 }
