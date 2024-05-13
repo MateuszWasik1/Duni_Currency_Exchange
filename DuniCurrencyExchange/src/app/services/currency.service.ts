@@ -7,6 +7,7 @@ export class CurrencyService {
     constructor() { }
 
     GetCurrencies(){
+        //rates based on 26.05.2024
         let ListOfCurrencies = [
             {
                 "CurrencyID": 1,
